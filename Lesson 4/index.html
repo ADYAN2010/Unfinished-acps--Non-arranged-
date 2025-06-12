@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Display Name with Inheritance</title>
+</head>
+<body>
+  <h2>Display Name from a Class</h2>
+  <p id="output1"></p>
+
+  <script>
+    class Person {
+      static sayHello() {
+        return "Hi! I am a person.";
+      }
+
+      showName(name) {
+        return "My name is " + name;
+      }
+    }
+
+    class Student extends Person {}
+
+    let student = new Student();
+    document.getElementById("output1").innerHTML =
+      Person.sayHello() + "<br>" + student.showName("Alice");
+  </script>
+</body>
+</html>
