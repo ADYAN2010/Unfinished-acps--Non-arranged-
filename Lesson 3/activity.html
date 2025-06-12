@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fun Random Number Generator</title>
+</head>
+<body>
+  <h2>🎲 Let's Roll Some Random Numbers!</h2>
+  <p>Click the button below to get 5 random numbers between 0 and 99.</p>
+
+  <button onclick="generateRandomNumbers()">Show Me Numbers</button>
+
+  <div id="randomOutput" style="margin-top: 15px; font-size: 18px;"></div>
+
+  <script>
+    function generateRandomNumbers() {
+      let count = 0;
+      let message = "Here are your lucky numbers:<br><br>";
+
+      while (count < 5) {
+        let randomNum = Math.floor(Math.random() * 100);
+        message += "👉 Number " + (count + 1) + ": " + randomNum + "<br>";
+        count++;
+      }
+
+      document.getElementById("randomOutput").innerHTML = message;
+    }
+  </script>
+</body>
+</html>
