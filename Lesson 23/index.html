@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Final Activity</title>
+</head>
+<body>
+  <h2>Sum of Numbers</h2>
+  <p id="sumResult"></p>
+
+  <h2>Trigonometric Values (for 30°)</h2>
+  <p id="trigResult"></p>
+
+  <script>
+
+    function addNumbers() {
+      let total = 0;
+      for (let i = 0; i < arguments.length; i++) {
+        total += arguments[i];
+      }
+      return total;
+    }
+
+    
+    let sum = addNumbers(5, 10, 15);
+    document.getElementById("sumResult").innerHTML = "Total: " + sum;
+
+    
+    let degree = 30;
+    let radian = degree * (Math.PI / 180); 
+
+    let sinVal = Math.sin(radian).toFixed(2);
+    let cosVal = Math.cos(radian).toFixed(2);
+    let tanVal = Math.tan(radian).toFixed(2);
+
+    document.getElementById("trigResult").innerHTML =
+      "Sine(30°): " + sinVal + "<br>" +
+      "Cosine(30°): " + cosVal + "<br>" +
+      "Tangent(30°): " + tanVal;
+  </script>
+</body>
+</html>
